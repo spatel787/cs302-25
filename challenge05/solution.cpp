@@ -1,4 +1,4 @@
-// Challenge 6: Minimum Spanning Tree
+// Challenge 5: Minimum Spanning Tree
 
 using namespace std;
 
