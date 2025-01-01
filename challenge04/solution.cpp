@@ -1,4 +1,4 @@
-// Challenge 05: Graph Paths
+// Challenge 04: Graph Paths
 
 using namespace std;
 
