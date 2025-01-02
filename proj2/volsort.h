@@ -18,7 +18,7 @@ struct List {
     List(); 					// define in list.cpp
     ~List();					// define in list.cpp
 
-  //    void push_front(const std::string &s);	//define below
+    void push_front(const std::string &s);	// also define in list.cpp
 };
 
 
@@ -26,8 +26,6 @@ struct List {
 
 bool node_number_compare(const Node *a, const Node *b); 	//implement in list.cpp to avoid compile-time issues, used by quick, merge and stl
 bool node_string_compare(const Node *a, const Node *b);		//implement in list.cpp to avoid compile-time issues, merge and stl
-
-void dump_node(Node *n);					// implement in this file (volsort.h) to make it easier for TAs to grade
 
 void stl_sort(List &l, bool numeric);	// define in stl.cpp - sort using std::sort
 void qsort_sort(List &l, bool numeric);	// define in qsort.cpp - sort using qsort from cstdlib
