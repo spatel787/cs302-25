@@ -1,12 +1,9 @@
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
-#include <ctype.h>
 #include <iostream>
 #include <vector>
-using namespace std;
 
-#define talloc(type, num) (type *) malloc(sizeof(type)*(num))
+using namespace std;
 
 class Superball {
   public:
@@ -22,7 +19,7 @@ class Superball {
 
 void usage(const char *s) 
 {
-  fprintf(stderr, "usage: sb-play rows cols min-score-size colors\n");
+  fprintf(stderr, "usage: sb-analyze rows cols min-score-size colors\n");
   if (s != NULL) fprintf(stderr, "%s\n", s);
   exit(1);
 }
@@ -40,7 +37,7 @@ Superball::Superball(int argc, char **argv)
 
   colors.resize(256, 0);
 
-  for (i = 0; i < strlen(argv[4]); i++) {
+  for (i = 0; i < (int) strlen(argv[4]); i++) {
     if (!isalpha(argv[4][i])) usage("Colors must be distinct letters");
     if (!islower(argv[4][i])) usage("Colors must be lowercase letters");
     if (colors[argv[4][i]] != 0) usage("Duplicate color");
@@ -58,7 +55,7 @@ Superball::Superball(int argc, char **argv)
       fprintf(stderr, "Bad board: not enough rows on standard input\n");
       exit(1);
     }
-    if (s.size() != c) {
+    if ((int) s.size() != c) {
       fprintf(stderr, "Bad board on row %d - wrong number of characters.\n", i);
       exit(1);
     }
@@ -78,7 +75,7 @@ Superball::Superball(int argc, char **argv)
   }
 }
 
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
   Superball *s;
  
