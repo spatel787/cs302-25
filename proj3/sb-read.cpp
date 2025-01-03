@@ -78,14 +78,13 @@ Superball::Superball(int argc, char **argv)
 int main(int argc, char **argv)
 {
   Superball *s;
-  int i, j;
   int ngoal, tgoal;
  
   s = new Superball(argc, argv);
 
   tgoal = 0;
   ngoal = 0;
-  for (i = 0; i < s->r*s->c; i++) {
+  for (int i = 0; i < s->r*s->c; i++) {
     if (s->goals[i] && s->board[i] != '*') {
       tgoal += s->colors[s->board[i]];
       ngoal++;
