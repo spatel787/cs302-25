@@ -21,6 +21,9 @@ int DisjointSetByRankWPC::Union(int s1, int s2)
 {
   int p, c;
 
+    if (s1 == s2)
+       return (-1);
+   
   if (links[s1] != -1 || links[s2] != -1) {
     cerr << "Must call union on a set, and not just an element.\n";
     exit(1);
