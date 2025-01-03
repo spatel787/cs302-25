@@ -1,12 +1,9 @@
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
-#include <ctype.h>
 #include <iostream>
 #include <vector>
-using namespace std;
 
-#define talloc(type, num) (type *) malloc(sizeof(type)*(num))
+using namespace std;
 
 class Superball {
   public:
@@ -78,7 +75,7 @@ Superball::Superball(int argc, char **argv)
   }
 }
 
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
   Superball *s;
   int i, j;
