@@ -5,12 +5,10 @@
  */
 
 #pragma once
-#include <vector>
-using namespace std;
 
-/* The Disjoint Set API is implemented as a c++ interface, 
-   because I am implementing it three ways.  Each subclass
-   implementation is in its own cpp file. */
+#include <vector>
+
+using namespace std;
 
 class DisjointSet {
   public:
@@ -20,35 +18,7 @@ class DisjointSet {
     virtual void Print() = 0;
 };
 
-/* The first subclass implements Union-by-Size. */
-
-class DisjointSetBySize : public DisjointSet {
-  public:
-    DisjointSetBySize(int nelements);
-    int Union(int s1, int s2);
-    int Find(int element); 
-    void Print();
-
-  protected:
-    vector <int> links;
-    vector <int> sizes;
-};
-
-/* The second subclass implements Union-by-Height. */
-
-class DisjointSetByHeight : public DisjointSet {
-  public:
-    DisjointSetByHeight(int nelements);
-    int Union(int s1, int s2);
-    int Find(int element); 
-    void Print();
-
-  protected:
-    vector <int> links;
-    vector <int> heights;
-};
-
-/* The third subclass implements Union-by-Rank with path compression. */
+/* We will use Dr. Plank's third subclass implementation -- Union-by-Rank with path compression. */
 
 class DisjointSetByRankWPC : public DisjointSet {
   public:
