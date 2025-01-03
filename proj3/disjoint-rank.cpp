@@ -73,14 +73,14 @@ void DisjointSetByRankWPC::Print()
 
   printf("\n");
   printf("Node:  ");
-  for (i = 0; i < links.size(); i++) printf("%3d", i);  
+  for (i = 0; i < (int) links.size(); i++) printf("%3d", i);  
   printf("\n");
 
   printf("Links: ");
-  for (i = 0; i < links.size(); i++) printf("%3d", links[i]);  
+  for (i = 0; i < (int) links.size(); i++) printf("%3d", links[i]);  
   printf("\n");
 
   printf("Ranks: ");
-  for (i = 0; i < links.size(); i++) printf("%3d", ranks[i]);  
+  for (i = 0; i < (int) links.size(); i++) printf("%3d", ranks[i]);  
   printf("\n\n");
 }
