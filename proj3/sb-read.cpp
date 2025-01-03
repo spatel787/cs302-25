@@ -37,7 +37,7 @@ Superball::Superball(int argc, char **argv)
 
   colors.resize(256, 0);
 
-  for (i = 0; i < strlen(argv[4]); i++) {
+  for (i = 0; i < (int) strlen(argv[4]); i++) {
     if (!isalpha(argv[4][i])) usage("Colors must be distinct letters");
     if (!islower(argv[4][i])) usage("Colors must be lowercase letters");
     if (colors[argv[4][i]] != 0) usage("Duplicate color");
@@ -55,7 +55,7 @@ Superball::Superball(int argc, char **argv)
       fprintf(stderr, "Bad board: not enough rows on standard input\n");
       exit(1);
     }
-    if (s.size() != c) {
+    if ((int) s.size() != c) {
       fprintf(stderr, "Bad board on row %d - wrong number of characters.\n", i);
       exit(1);
     }
