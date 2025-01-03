@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 
+#include "disjoint.h"
+
 using namespace std;
 
 class Superball {
@@ -81,4 +83,8 @@ int main(int argc, char **argv)
  
   s = new Superball(argc, argv);
 
+  DisjointSetByRankWPC ds(s->r*s->c);
+
+  ds.Print();
+  
 }
